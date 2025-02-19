@@ -12,7 +12,8 @@ body{
 	height: 100vh;
 }
 a{
-	background: mediumpurple;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+	background: red;
 	color: white;
 	padding: 20px 35px ;
 	text-decoration: none;
@@ -27,7 +28,7 @@ a::before{
 	right: 0;
 	height: 100%;
 	width: 100%;
-	background-color: crimson;
+	background-color: purple;
 	border-radius: 9px;
 	display: flex;
 	justify-content: center;
@@ -36,7 +37,7 @@ a::before{
 	transform: rotateX(270deg);
 	transform-origin: top; /*This will set the origin of rotation*/
 	transition: all 0.5s;
-	transition-delay: 0.2s;
+	transition-delay: 0.3s;
 }
 a::after{
 	content: "BUTTON";
@@ -45,7 +46,7 @@ a::after{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: limegreen;
+	background-color: green;
 	display: flex;
 	border-radius: 9px;
 	justify-content: center;
@@ -54,7 +55,7 @@ a::after{
 	transform: rotateX(270deg);
 	transform-origin: top;
 	transition: all 0.5s;
-	transition-delay: 0.4s;
+	transition-delay: 0.6s;
 }
 a:hover:before, a:hover:after{
 	 transform: rotateX(0);
