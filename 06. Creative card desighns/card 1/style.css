@@ -1,0 +1,57 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	caret-color: transparent;
+}
+body{
+	font-family: "Ubuntu";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.mainbox{
+	overflow: hidden;
+	position: relative;
+	border-radius: 9px;
+	display: flex;
+	flex-direction: column;
+	gap: 19px;
+	padding: 20px 15px 15px 15px;
+	height: 370px;
+	width: 300px;
+	border: 2px solid crimson;
+	transition: 0.5s;
+}
+.mainbox::before{
+	content: "";
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 7px;
+	background-color: crimson;
+	transition: all 1s;
+}
+.mainbox:hover{
+	color: white;
+}
+.mainbox:hover::before{
+	height: 100%;
+}
+button{
+	caret-color: transparent;
+	outline: none;
+	border: none;
+	border-radius:7px;
+	background: black;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	height: 30px;
+	width: 90px;
+	transition: all 0.5s;
+}

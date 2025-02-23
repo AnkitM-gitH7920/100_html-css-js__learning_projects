@@ -1,0 +1,66 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	caret-color: transparent;
+}
+body{
+	background: linear-gradient(#0093e9,#80d0c7);
+	font-family: "Ubuntu";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.card{
+	position: relative;
+	padding: 5px;
+	height: 295px;
+	width: 260px;
+	border-radius: 2px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	border: 1px solid black;
+	flex-direction: column;
+	background-color: white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+.card::before,
+.card::after{
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:0;
+	border-radius:2px;
+	background: white;
+	z-index: -1;
+	transition: 0.5s;
+}
+.card:hover::before{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6),inset 0px 0px 2px 1px rgba(0, 0, 0, 0.7);
+	transform: rotate(8deg);
+}
+.card:hover::after{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6),inset 0px 0px 2px 1px rgba(0, 0, 0, 0.7);
+	transform: rotate(16deg);
+}
+.content{
+	position: absolute;
+	bottom: 19px;
+	font-weight: bolder;
+	font-size: 1.8rem;
+}
+.img-area{
+	z-index: 2;
+	position: absolute;
+	height: 98%;
+	width: 98%;
+	border: 1px solid black;
+	border-radius: 7px;
+	transition: all 0.5s;
+}
+.card:hover .img-area{
+	height: 80%;
+}
