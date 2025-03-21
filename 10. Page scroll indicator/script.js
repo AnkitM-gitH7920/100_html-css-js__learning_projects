@@ -9,3 +9,8 @@ function scroll(){
 	let completeScroll = (scrollTop/scrollheight)*100;
 	thumb.style.width = `${completeScroll}%`
 }
+
+document.querySelector('.scrollButton').addEventListener('click',()=>{
+	document.documentElement.scrollTop = 0;
+	thumb.style.width = `0px`
+})

@@ -1,0 +1,50 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root{
+	--whiteBackground: #fff;
+	--blackBackground: #000;
+}
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--whiteBackground);
+}
+#switch{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label{
+	caret-color: transparent;
+	height: 60px;
+	width: 150px;
+	background-color: var(--blackBackground);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	border-radius: 100px;
+	cursor: pointer;
+	transition: 0.5s;
+	position: relative;
+}
+label::after{
+	content: "";
+	height: 50px;
+	width: 50px;
+	background-color: var(--whiteBackground);
+	border-radius: 90px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	transition: 0.5s;
+}
+#switch:checked + label::after{
+	background-color: var(--blackBackground);
+	transform: translateX(185%);
+}
+#switch:checked + label{
+	background-color: var(--whiteBackground);
+}

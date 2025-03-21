@@ -4,7 +4,12 @@
 	box-sizing: border-box;
 	caret-color: transparent;
 }
+.scrollButton{
+	height: 40px;
+	width:6.0rem;
+}
 body{
+	padding: 0px 0px 50px 0px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
