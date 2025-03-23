@@ -1,0 +1,72 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+button,p{
+	caret-color: transparent;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: "Ubuntu";
+	background-color: #e19afc;
+}
+.container{
+	display: flex;
+	align-items: center;
+	gap: 100px;
+}
+.copyText,.moveText{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	flex-direction: column;
+}
+.copyText{
+	position: relative;
+}
+.copyText p{
+	display: none;
+	width: 190px;
+	position: absolute;
+	top: -40px;
+	background-color: #39393b;
+	padding: 5px 6px;
+	border-radius:9px;
+	color: white;
+}
+#copyInputField,
+#moveInputField{
+	color: white;
+	background-color: rgba(29, 29, 31,0.8);
+	padding: 10px 15px 10px 9px;
+	outline: none;
+	border:none;
+	border-radius: 7px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+	font-weight: 600;
+}
+#moveInputField{
+	pointer-events: none;
+	caret-color: transparent;
+}
+#copyInputField::placeholder,
+#moveInputField::placeholder{
+	font-size: 13px;
+	font-weight: bold;
+}
+#copy,
+#move{
+	padding: 5px 7px;
+	color: whitesmoke;
+	background-color: rgba(0, 0, 0, 0.9);
+	transition: 0.3s;
+	border:none;
+	outline: none;
+	border-radius: 7px;
+	font-weight: 600;
+	cursor: pointer;
+}
