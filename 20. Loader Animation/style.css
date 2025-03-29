@@ -26,7 +26,7 @@ body{
 	height: 100px;
 	width: 100px;
 	border-radius: 100%;
-	border: 3px solid #fff;
+	border: 3px solid crimson;
 	-webkit-mask-image: radial-gradient(circle at top left, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%); /*for blurry effect at the borders of circle*/
 	animation: clockwise 1s ease infinite;
 }
@@ -37,31 +37,9 @@ body{
 	height: 80px;
 	width: 80px;
 	border-radius: 100%;
-	border: 3px solid #fff;
-	-webkit-mask-image: radial-gradient(circle at top right, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%); /*for blurry effect at the borders of circle*/
+	border: 3px solid #0796b3;
+	-webkit-mask-image: radial-gradient(circle at top left, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%); /*for blurry effect at the borders of circle*/
 	animation: anticlockwise 1s ease infinite;
-}
-.inner2-loader{
-	position: absolute;
-    top: 20%;
-    right: 20%;
-    height: 60px;
-    width: 60px;
-    border: 3px solid #fff;
-    -webkit-mask-image: radial-gradient(circle at bottom left, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%); /*for blurry effect at the borders of circle*/
-    border-radius: 100%;
-    animation: clockwise 1s ease infinite;
-}
-.inner3-loader{
-	position: absolute;
-    top: 30%;
-    right: 30%;
-    height: 40px;
-    width: 40px;
-    border: 3px solid #fff;
-    -webkit-mask-image: radial-gradient(circle at bottom right, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%); /*for blurry effect at the borders of circle*/
-    border-radius: 100%;
-    animation: anticlockwise 1s ease infinite;
 }
 @keyframes clockwise{
 	100%{
