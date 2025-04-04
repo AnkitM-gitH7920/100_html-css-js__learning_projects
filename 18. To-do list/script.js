@@ -3,7 +3,6 @@ const addBtn = document.getElementById('add');
 const inputedTask = document.getElementById('taskInput');
 
 function addTask(){
-    let tasks = '';
     if (inputedTask.value === "") {
         alert('Please enter a task first');
     }

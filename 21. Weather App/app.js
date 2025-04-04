@@ -3,16 +3,16 @@ const api_key = `a39a61df78a182057584f9699c3f7033`;
 const api_url = `https://api.openweathermap.org/data/2.5/weather?q=city_name&units=metric`;
 
 // getting all the DOM elements
-let input = document.getElementById("searchBar");
-let searchBtn = document.querySelector(".searchBtn");
-let cityName = document.getElementById("cityName");
+let input                = document.getElementById("searchBar");
+let searchBtn            = document.querySelector(".searchBtn");
+let cityName             = document.getElementById("cityName");
 let weatherConditionIcon = document.getElementById("weatherConditionIcon");
-let temperature = document.getElementById("temperature");
-let humidity = document.getElementById("humidity");
-let windspeed = document.getElementById("windspeed");
-let locationDate = document.getElementById("l-d-date");
-let weatherdDesc = document.getElementById("description");
-let forecastContainer = document.querySelector(".forecastDiv");
+let temperature          = document.getElementById("temperature");
+let humidity             = document.getElementById("humidity");
+let windspeed            = document.getElementById("windspeed");
+let locationDate         = document.getElementById("l-d-date");
+let weatherdDesc         = document.getElementById("description");
+let forecastContainer    = document.querySelector(".forecastDiv");
 
 const weatherIcons = {
 	"Clear":"images/weatherIcons/sun.png",
@@ -31,7 +31,7 @@ const weatherIcons = {
 
 async function fetchWeather(enteredLocation){
 	try{
-		const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${enteredLocation}&units=metric&appid=${api_key}`);
+	  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${enteredLocation}&units=metric&appid=${api_key}`);
 	  const data = await weather.json();
 	  if (data.cod != 200) {
 		  alert("Location not found, please enter a valid location")
@@ -73,20 +73,22 @@ async function updateForecastInfo(enteredLocation){
 	let forecastList = forecastResponse.list;
 
 	forecastList.forEach((listItem,index)=>{
-		let forecastTakenIcon = forecastList[index].weather[0].main;
-		let forecastIcon = weatherIcons[forecastTakenIcon];
-		let temperatureForecast = forecastList[index].main.temp;
-
-		//clear previous data
-		function tempCheck(temperatureForecast){
-		  return temperatureForecast < 0 ? temperatureForecast : Math.round(temperatureForecast)
-		}
-		forecastContainer.innerHTML += `
-		   <div class="forecast-container alignC directionColumn">
-			   <p id="fore-date">${formatDate(listItem.dt).split(", ")[1]}</p>
-			   <img src="${forecastIcon}">
-			   <p id="fore-temperature">${tempCheck(temperatureForecast)}&deg;C</p>
-		   </div>`;
+		if (listItem.dt_txt.includes("00:00:00")) {
+			let forecastTakenIcon = forecastList[index].weather[0].main;
+		    let forecastIcon = weatherIcons[forecastTakenIcon];
+		    let temperatureForecast = forecastList[index].main.temp;
+		    function tempCheck(temperatureForecast){
+		      return temperatureForecast < 0 
+		      ? temperatureForecast 
+		      : Math.round(temperatureForecast)
+		    }
+		    forecastContainer.innerHTML += `
+		       <div class="forecast-container alignC directionColumn">
+			       <p id="fore-date">${formatDate(listItem.dt).split(", ")[1]}</p>
+			       <img src="${forecastIcon}">
+			       <p id="fore-temperature">${tempCheck(temperatureForecast)}&deg;C</p>
+		       </div>`;
+		};
 	});
 }
 

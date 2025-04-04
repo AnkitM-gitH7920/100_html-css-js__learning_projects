@@ -3,10 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/svg" href="logo.png">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="utilities.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<title>Todo List</title>
 </head>
-<body>
+<body class="center">
+	<section class="container directionColumn">
+		<div class="head alignC">
+			<p>To-Do List</p>
+			<img src="to-do-list.png">
+		</div>
+		<header class="alignC">
+			<input type="text" id="taskInput" name="" placeholder="Add your task...">
+			<button id="add">Add</button>
+		</header>
+		<ul class="taskContainer alignC directionColumn">
+			<!-- <li class="task alignC">
+				<input type="checkbox" id="doneTask" name="">
+			    <p class="taskText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat.</p>
+			   <i class='bx bx-x' style='color: rgba(0,0,0, 0.8);'  ></i>
+			</li> -->  <!--Js block-->
+		</ul>
+	</section>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

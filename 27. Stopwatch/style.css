@@ -1,0 +1,88 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "poppins";
+	caret-color: transparent;
+	user-select: none;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.container{
+	padding: 20px 30px;
+	gap: 30px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 12px;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.9);
+}
+#time{
+	font-weight: 600;
+	font-size: 4rem;
+}
+.icons{
+	gap: 50px;
+	display: flex;
+	align-items: center;
+}
+.icons>div{
+	cursor: pointer;
+	box-shadow: 0px 4px 0px 2px rgba(0, 0, 0, 1.0);
+	transition: all 0.1s;
+}
+.icons>div:active{
+	transform: translateY(3px);
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1.0);
+}
+img{
+	cursor: pointer;
+	object-fit: contain;
+}
+#play{
+	margin-left: 4px;
+	height: 2.2rem;
+}
+#square{
+	margin-right: 0px;
+	height: 1.0rem;
+}
+#reset{
+	height: 1.4rem;
+}
+#pause{
+	height: 20px;
+}
+#play,
+#square,
+#reset,
+#pause{
+
+}
+.pauseDiv,
+.playDiv,
+.resetDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f2730a;
+	border-radius: 200px;
+}
+.pauseDiv{
+	height: 45px;
+	width: 45px;
+}
+.playDiv{
+	height: 60px;
+	width: 60px;
+}
+.resetDiv{
+	height: 45px;
+	width: 45px;
+}
