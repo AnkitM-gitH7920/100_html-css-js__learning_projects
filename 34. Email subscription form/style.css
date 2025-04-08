@@ -1,0 +1,184 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "poppins";
+}
+p{
+	caret-color: transparent;
+}
+body{
+	overflow: hidden;
+	background: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	background-repeat: no-repeat;
+}
+form{
+	color: #fff;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.formContainer{
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 27rem;
+}
+.content{
+	text-align: left;
+}
+.CS{
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+}
+.BN{
+	margin: 20px 0px;
+	font-size: 2.0rem;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+.MD{
+	margin-bottom: 20px;
+	font-size: 0.73rem;
+	letter-spacing: 2px;
+}
+.input{
+	position: relative;
+	margin-bottom: 10px;
+}
+.input>input{
+	border-radius: 200px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	border: none;
+	outline: none;
+	width: 100%;
+	padding: 15px 100px 15px 15px;
+}
+.png{
+	caret-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 0%;
+	height: 100%;
+	width: 90px;
+	top: 0%;
+	border-bottom-left-radius: 900px;
+	border-top-left-radius: 900px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: rgba(24, 184, 4,1.0);
+}
+.png>img{
+	object-fit: contain;
+	height: 30px;
+}
+.greet{
+	color: rgb(32 255 0);
+}
+.fadeIn{
+	animation: fadeIn 0.7s;
+}
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+/*toast notification designs*/
+#toastBox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	bottom: 40px;
+	right: 30px;
+	gap: 15px;
+}
+.toast{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	height: 60px;
+	width: 300px;
+	padding: 0px 15px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	border-radius: 9px;
+	background-color: #fff;
+	animation: slideIn 0.3s linear,fadeOut 1s linear 4s;
+}
+.text{
+	font-weight: 600;
+}
+.toast::after{
+	content: "";
+	position: absolute;
+    bottom: 0px;
+    left: 0;
+    border-radius: 15px;
+    height: 7px;
+    width: 100%;
+    background-color: green;
+    animation: progress 5s linear;
+}
+.fade{
+	animation: fadeOut 1s linear;
+}
+
+.green{
+	color: green;
+}
+.toast.green::after{
+	background-color: green;
+}
+.yellow{
+	color:#a79c00;
+}
+.toast.yellow::after{
+	background-color: #c9c036;
+}
+.red{
+	color: rgba(255, 0, 0, 0.8);
+}
+.toast.red::after{
+	background-color: rgba(255, 0, 0, 0.8);
+}
+.imageStyles{
+	object-fit: contain;
+	height: 25px;
+}
+@keyframes slideIn{
+	from{
+		transform: translate(100%,0%);
+	}
+	to{
+		transform: translate(0%,0%);
+	}
+}
+@keyframes fadeOut{
+	from{
+		opacity: 1;
+	}
+	to{
+		transform: translateY(-10px);
+		opacity: 0;
+	}
+}
+@keyframes progress{
+	from{
+		width: 100%;
+	}
+	to{
+		width: 0%;
+	}
+}

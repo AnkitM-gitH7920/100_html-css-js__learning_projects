@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Password show and hide</title>
+</head>
+<body>
+	<div class="container">
+		<input id="pass" type="password" placeholder="Enter password...">
+		<div class="eyes">
+			<img src="view.png">
+		</div>
+	</div>
+<script type="text/javascript">
+	let passwordField = document.getElementById("pass");
+	let eyeDiv = document.querySelector(".eyes");
+	let imgSrc;
+	eyeDiv.addEventListener("click",(event)=>{
+		imgSrc = eyeDiv.firstElementChild;
+		if (passwordField.type == "password" && imgSrc.src == "http://localhost:3000/view.png") {
+			passwordField.type = "text";
+			imgSrc.src = "http://localhost:3000/hide.png";
+		}else {
+			passwordField.type = "password";
+			imgSrc.src = "http://localhost:3000/view.png";
+		};
+	});
+</script>
+</body>
+</html>

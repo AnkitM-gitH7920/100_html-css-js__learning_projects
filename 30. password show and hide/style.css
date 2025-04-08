@@ -1,0 +1,41 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "poppins";
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #3c5077;
+}
+.container{
+	position: relative;
+}
+.eyes{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    right: 8px;
+    top: 26%;
+	caret-color: transparent;
+	cursor: pointer;
+}
+.eyes>img{
+    object-fit: contain;
+    height: 25px;
+}
+#pass{
+	outline: none;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	padding: 10px 40px 10px 15px;
+}
+#pass::placeholder{
+	letter-spacing: 2px;
+	font-weight: 500;
+}

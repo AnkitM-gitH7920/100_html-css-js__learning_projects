@@ -7,22 +7,22 @@ buttonsDiv.addEventListener("click",(event)=>{
 		showToastNoti(btnText);
 	}
 })
+
 function showToastNoti(btnText){
-	let toast = document.createElement("div");
-	toast.classList.add("toast");
 	if (btnText == "Success"){
-		toast.classList.add("green");
-		toast.innerHTML = `<img class="imageStyles" src="check.png">
-						   <p class="text">Successfully Submitted</p>`;
+		createToast("Successfully Submitted","check.png","green")
 	}else if (btnText == "Error"){
-		toast.classList.add("red");
-		toast.innerHTML = `<img class="imageStyles" src="close.png">
-						   <p class="text">Unexpected error occcured</p>`;
+		createToast("Internet disconnected!!!","close.png","red")
 	}else if (btnText == "Invalid"){
-		toast.classList.add("yellow");
-		toast.innerHTML = `<img class="imageStyles" src="warning.png">
-						   <p class="text">Invalid input, try again!!!</p>`;
+		createToast("Email cannot be empty!!!","warning.png","yellow")
 	}
-	toastBox.appendChild(toast)
-	setTimeout(()=>{ toast.remove() },5000)
+}
+function createToast(msg,imageURl,colorClass){
+	let toast = document.createElement("div")
+	toast.classList.add("toast");
+	toast.classList.add(colorClass);
+	toast.innerHTML = `<img class="imageStyles" src="${imageURl}">
+					   <p class="text">${msg}</p>`;
+	toastBox.appendChild(toast);
+	setTimeout(()=>{ toast.remove() },5000);
 }

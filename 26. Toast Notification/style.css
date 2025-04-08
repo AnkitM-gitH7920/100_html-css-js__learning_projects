@@ -67,7 +67,7 @@ button:hover{
     bottom: 0px;
     left: 0;
     border-radius: 15px;
-    height: 3px;
+    height: 7px;
     width: 100%;
     background-color: green;
     animation: progress 5s linear;
@@ -90,7 +90,7 @@ button:hover{
 	background-color: rgba(255, 0, 0, 0.8);
 }
 .yellow{
-	color: #c9c036;
+	color: #a79c00;;
 }
 .toast.yellow::after{
 	background-color: #c9c036;

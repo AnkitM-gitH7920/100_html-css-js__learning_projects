@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Form validation</title>
+</head>
+<body>
+	<form name="validating-form">
+		<div class="png">
+			<img src="plain.png">
+		</div>
+		<div class="nameField">
+			<div class="nameTitleText">
+				<p>Full name</p>
+				<p id="wSurname">(with surname)</p>
+			</div>
+			<input class="inputs" required type="text" placeholder="Enter full name" name="" id="nameInput">
+			<div class="warning nameWarning">
+				<p style="color:red" class="warningText"></p>
+			</div>
+		</div>
+		<div class="mobileField">
+			<div class="phoneTitleText">
+				<p>Phone No.</p>
+				<p id="wPhone">(must be 10 digits)</p>
+			</div>
+			<input class="inputs" required type="text" placeholder="123 456 7890" name="" id="mobileInput">
+			<div class="warning mobileWarning">
+				<p style="color:red" class="warningText"></p>
+			</div>
+		</div>
+		<div class="emailField">
+			<div class="emailTitleText">
+				<p>Email Id</p>
+				<p id="wEmail">(@mail format)</p>
+			</div>
+			<input class="inputs" required type="email" placeholder="Enter Email" name="" id="emailInput">
+			<div class="warning emailWarning">
+				<p style="color:red" class="warningText"></p>
+			</div>
+		</div>
+		<div class="messageField">
+			<div class="messageTitleText">
+				<p>Your message</p>
+				<p id="wMessage">(must be greater than 30 digits)</p>
+			</div>
+			<input class="inputs" required type="text" placeholder="Enter your message" name="" id="messageInput">
+			<div class="warning messageWarning">
+				<p style="color:red" class="warningText"></p>
+			</div>
+		</div>
+		<input class="notAllowed" type="submit" placeholder="Submit" name="">
+		<p class="mainWarning">Fill out the fields!!!</p>
+	</form>
+<script class="js" src="script.js"></script>
+</body>
+</html>
