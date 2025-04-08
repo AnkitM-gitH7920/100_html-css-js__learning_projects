@@ -1,0 +1,8 @@
+pending projects=>
+
+1. quiz app
+2. to do list functionality
+3. age calculator functionality 
+4. color mode toggler double click problem
+5. Image gallery
+6. 
