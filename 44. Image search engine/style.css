@@ -1,0 +1,120 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "poppins";
+}
+::-webkit-scrollbar{
+	padding: 0px 10px;
+	width: 7px;
+	height: 7px;
+	border-radius: 100px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb{
+	width: 100%;
+	border-radius: 100px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+body,
+header,
+.container,
+main{
+	display: flex;
+}
+body,header{
+	align-items: center;
+	justify-content: center;
+}
+body{
+	color: #fff;
+	overflow: auto;
+	padding: 2rem 0rem;
+	background-color: #39297b;
+}
+h1{
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background-color:rgba(82, 67, 145, 1.0);
+	padding: 8px 15px;
+	border-radius: 13px;
+}
+.container{
+	overflow-x: hidden;
+	overflow-y: auto;
+	gap: 15px;
+	flex-direction: column;
+	align-items: center;
+}
+header{
+	flex-direction: column;
+	gap: 15px;
+}
+header>.inputs{
+	position: relative;
+}
+header>.inputs>input{
+	outline: none;
+	padding: 8px 110px 8px 10px;
+	border-radius: 6px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+	background-color: transparent;
+	font-size: 1.1rem;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+header>.inputs>button{
+	position: absolute;
+	right: 0;
+	top: 0%;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: rgba(214, 127, 4, 1.0);
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	width: 100px;
+	height: 100%;
+}
+.showMore{
+	display: none;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: rgba(214, 127, 4, 1.0);
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	width: 120px;
+	height: 40px;
+}
+main{
+	margin-top: 15px;
+	display: none;
+	border: 1px solid white;
+	border-radius: 9px;
+	padding: 15px 10px;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: scroll;
+	max-width: 65rem;
+	max-height: 25rem;
+	justify-content: space-evenly;
+}
+img{
+	cursor: pointer;
+	margin: 10px;
+	border-radius: 9px;
+	box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.6);
+	object-fit: contain;
+	height: 18rem;
+}
+/*img:last-child{
+	justify-content: flex-start;
+	border: 1px solid red;
+}*/

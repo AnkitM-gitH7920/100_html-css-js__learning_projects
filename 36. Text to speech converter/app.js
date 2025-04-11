@@ -23,4 +23,5 @@ voiceSelect.addEventListener("change", () => {
 document.querySelector(".play").addEventListener("click",()=>{
 	speech.text = document.querySelector("textarea").value;
 	window.speechSynthesis.speak(speech)
+    console.log(speech)
 })
