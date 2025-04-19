@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="project for my portfolio">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="Ankit mehra">
 	<link rel="icon" type="image/png" href="images/icon.webp">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<title>Weather App</title>
 </head>
 <body class="center">
 	<section class="container directionColumn">
 		<header class="alignC">
 			<input type="text" placeholder="Search City" name="" id="searchBar">
-			<div class="searchBtn center"><i class='bx bx-search' style='color:#ffffff'  ></i></div>
+			<div class="searchBtn center">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+			</div>
 		</header>
 		<main>
 			<div class="location-date alignC">
 				<div class="l-d-left alignC">
 					<div class="l-d-left-logo">
-						<img src="images/location.webp">
+						<img alt="Loading" loading="lazy" src="images/location.webp">
 					</div>
 					<div class="l-d-left-locationInfo">
 						<p id="cityName">Location,</p>
@@ -28,7 +33,7 @@
 				<p id="l-d-date">Date</p>
 			</div>
 			<div class="icon-desc alignC">
-				<img loading="lazy" id="weatherConditionIcon" src="images/weatherIcons/sun.png" alt="Try searching a location">
+				<img loading="lazy" id="weatherConditionIcon" src="images/weatherIcons/sun.png" alt="Loading">
 				<div class="temp-desc directionColumn">
 					<p id="temperature">Temp</p>
 					<p id="description" class="alignCl">Description</p>
@@ -36,14 +41,14 @@
 			</div>
 			<div class="humidity-windspeed alignC">
 				<div class="H-info alignC">
-					<img src="images/humidity.webp">
+					<img alt="Loading" loading="lazy" src="images/humidity.webp">
 					<div class="H-text directionColumn">
 					    <p class="H-title">Humidity</p>
 						<p id="humidity">00%</p>
 					</div>
 				</div>
 				<div class="W-info alignC">
-					<img src="images/windspeed.webp">
+					<img alt="Loading" loading="lazy" src="images/windspeed.webp">
 					<div class="W-text directionColumn">
 					    <p class="W-title">Wind speed</p>
 						<p id="windspeed">00.00 m/s</p>
