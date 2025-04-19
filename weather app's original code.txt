@@ -309,8 +309,9 @@ async function fetchWeather(enteredLocation){
 	  const parsedCountryCodes = await countryCodeFetchRes.json();
 	  const data = await weather.json();
 	  if (data.cod != 200) {
-		  alert("Location not found, please enter a valid location or check the spelling of entered location");
-		  console.clear()
+		 document.getElementById("cityName").innerText = "City not found!";
+		 document.getElementById("country").innerText = "";
+		 console.clear()
 	  }
 	  else{
 	  	// city name, countryName and date update
