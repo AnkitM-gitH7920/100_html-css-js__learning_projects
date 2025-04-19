@@ -1,6 +1,5 @@
 // api key
 const api_key = `a39a61df78a182057584f9699c3f7033`;
-const api_url = `https://api.openweathermap.org/data/2.5/weather?q=city_name&units=metric`;
 
 // getting all the DOM elements
 let input                = document.getElementById("searchBar");
@@ -12,35 +11,38 @@ let humidity             = document.getElementById("humidity");
 let windspeed            = document.getElementById("windspeed");
 let locationDate         = document.getElementById("l-d-date");
 let weatherdDesc         = document.getElementById("description");
-let forecastContainer    = document.querySelector(".forecastDiv");
+let forecastDiv    = document.querySelector(".forecastDiv");
 
 const weatherIcons = {
-	"Clear":"images/weatherIcons/sun.png",
-	"Rain":"images/weatherIcons/rainy-day.png",
-	"Clouds":"images/weatherIcons/cloudy.png",
-	"Drizzle":"images/weatherIcons/drizzle.png",
-	"Thunderstorm":"images/weatherIcons/storm.png",
-	"Snow":"images/weatherIcons/snow.png",
-	"Mist":"images/weatherIcons/mist.png",
-	"Smoke":"images/weatherIcons/smoke.png",
-	"Haze":"images/weatherIcons/haze.png",
-	"Dust":"images/weatherIcons/dust.png",
-	"Fog":"images/weatherIcons/fog.png",
-	"Ash":"images/weatherIcons/ash.png",
-	"Tornado":"images/weatherIcons/tornado.png"};
+	"Clear":"images/weatherIcons/sun.webp",
+	"Rain":"images/weatherIcons/rainy-day.webp",
+	"Clouds":"images/weatherIcons/cloudy.webp",
+	"Drizzle":"images/weatherIcons/drizzle.webp",
+	"Thunderstorm":"images/weatherIcons/storm.webp",
+	"Snow":"images/weatherIcons/snow.webp",
+	"Mist":"images/weatherIcons/mist.webp",
+	"Smoke":"images/weatherIcons/smoke.webp",
+	"Haze":"images/weatherIcons/haze.webp",
+	"Dust":"images/weatherIcons/dust.webp",
+	"Fog":"images/weatherIcons/fog.webp",
+	"Ash":"images/weatherIcons/ash.webp",
+	"Tornado":"images/weatherIcons/tornado.webp"};
 
 async function fetchWeather(enteredLocation){
 	try{
 	  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${enteredLocation}&units=metric&appid=${api_key}`);
+	  const countryCodeFetchRes = await fetch("/countrycodes.json");
+	  const parsedCountryCodes = await countryCodeFetchRes.json();
 	  const data = await weather.json();
 	  if (data.cod != 200) {
-		  alert("Location not found, please enter a valid location")
+		  alert("Location not found, please enter a valid location or check the spelling of entered location");
 	  }
 	  else{
-	  	// city name amd date update
-	  	cityName.innerText = data.name;
+	  	// city name, countryName and date update
 	  	let unixTimestamp = data.dt;
+	  	cityName.innerText = `${data.name},`;
 	  	locationDate.innerText = `${formatDate(unixTimestamp)}`;
+	  	document.getElementById("country").innerText = parsedCountryCodes[data.sys.country] || data.sys.country;
 
 	  	// icon update
 	  	let weatherTaken = data.weather[0].main;
@@ -48,26 +50,22 @@ async function fetchWeather(enteredLocation){
 	  	weatherConditionIcon.src = `${weatherIcon}`;
 
 	  	//temp and desc update
-	  	if (data.main.temp < 0) {
-	  		temperature.innerHTML = `${Math.round(data.main.temp)}&deg;C`;
-	  	}else{
-	  		temperature.innerHTML = `${Math.round(data.main.temp)}&deg;C`;
-	  	}
-		weatherdDesc.innerText  =  `${data.weather[0].description}`;
+	  	temperature.innerHTML  = `${Math.round(data.main.temp)}&deg;C`;
+		weatherdDesc.innerText = `${data.weather[0].description}`;
 
 
 	  	//humidity and windspeed update
 	  	humidity.innerText = `${data.main.humidity}%`
 	  	windspeed.innerText = `${Math.round(data.wind.speed)} m/s`
 
-		  updateForecastInfo(enteredLocation);
+		updateForecastInfo(enteredLocation);
 	  }
 	}catch(err){
 		console.log("Error fetching details, try refreshing the page",err)
 	};
 };
 async function updateForecastInfo(enteredLocation){
-	forecastContainer.innerHTML = "";
+	forecastDiv.innerHTML = "";
 	let forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${enteredLocation}&units=metric&appid=${api_key}`);
 	let forecastResponse = await forecastData.json();
 	let forecastList = forecastResponse.list;
@@ -76,20 +74,19 @@ async function updateForecastInfo(enteredLocation){
 		if (listItem.dt_txt.includes("00:00:00")) {
 			let forecastTakenIcon = forecastList[index].weather[0].main;
 		    let forecastIcon = weatherIcons[forecastTakenIcon];
-		    let temperatureForecast = forecastList[index].main.temp;
-		    function tempCheck(temperatureForecast){
-		      return temperatureForecast < 0 
-		      ? temperatureForecast 
-		      : Math.round(temperatureForecast)
-		    }
-		    forecastContainer.innerHTML += `
+		    forecastDiv.innerHTML += `
 		       <div class="forecast-container alignC directionColumn">
-			       <p id="fore-date">${formatDate(listItem.dt).split(", ")[1]}</p>
-			       <img src="${forecastIcon}">
-			       <p id="fore-temperature">${tempCheck(temperatureForecast)}&deg;C</p>
+			       <p id="fore-date">${formatDate(listItem.dt).split(",")[1]}</p>
+			       <img loading="lazy" src="${forecastIcon}">
+			       <p id="fore-temperature">${tempCheck(forecastList[index].main.temp)}&deg;C</p>
 		       </div>`;
 		};
 	});
+};
+function tempCheck(tempUnit){
+	return tempUnit < 0 
+    ? tempUnit 
+    : Math.round(tempUnit)
 }
 
 function formatDate(unixTimestamp) {
@@ -109,7 +106,6 @@ input.addEventListener('keydown',(event)=>{
 
 searchBtn.addEventListener('click',(event)=>{
 	let enteredLocation = input.value;
-
 	enteredLocation == ""
 	? alert("Please enter a location first")
 	: fetchWeather(enteredLocation); input.value = ""

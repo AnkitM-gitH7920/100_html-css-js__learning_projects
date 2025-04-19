@@ -3,9 +3,10 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "poppins";
+	user-select: none;
 }
 body{
-	background: url(images/background.jpg);
+	background: url(images/background3.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -49,16 +50,36 @@ header{
 
 /*location-date div styles*/
 .location-date{
-	gap: 10px;
+	gap: 13px;
 }
 .l-d-left{
-	gap: 9px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 #cityName{
 	max-width: 160px;
 	word-break: break-word;
 	white-space: normal;
 	font-weight: 600;
+	text-align: left;
+}
+.l-d-left-locationInfo{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+#country{
+	max-width: 100px;
+	text-align: center;
+	letter-spacing: 1px;
+	word-break: break-word;
+	white-space: normal;
+	font-weight: 700;
+	font-size: 0.8rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 3px 6px;
+	border-radius: 5px;
 }
 .l-d-date{
     max-width: 110px;
@@ -125,12 +146,18 @@ header{
 	border-radius: 80px;
 }
 .forecast-container{
+	cursor: pointer;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	min-width: 85px;
 	gap: 5px;
 	background-color: rgba(139, 139, 139, 0.3);
-	border-radius: 7px;
+	border-radius: 14px;
 	padding: 4px 10px;
+	transition: 0.3s;
+}
+.forecast-container:hover{
+	transform: scale(1.1);
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1.0);
 }
 #fore-date{
 	word-break: break-word;	
@@ -147,4 +174,76 @@ header{
 	overflow: hidden;
 	max-width: 100%;
 	white-space: normal;
+}
+/*image styling*/
+.searchBtn{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.5rem;
+    border-radius: 100px;
+    transition: background-color 0.3s;
+    caret-color: transparent;
+}
+.searchBtn:hover{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.l-d-left img{
+    object-fit: contain;
+    height: 20px;
+    animation: updown 0.6s linear infinite alternate;
+}
+
+@keyframes updown{
+    from{
+        transform: translate(0px, 2px);
+    }
+    to{
+        transform: translate(0px, -2px);
+    }
+}
+
+/*weather condition icon styles*/
+#weatherConditionIcon{
+    object-fit: contain;
+    height: 8.5rem;
+}
+
+/*humidity and windspeed icon styles*/
+.H-info>img,
+.W-info>img{
+    object-fit: contain;
+    height: 2.5rem;
+}
+
+/*forecast weather scroll div styles*/
+
+.forecast-container>img{
+    object-fit: contain;
+    height: 3.0rem;
+}
+
+/*utility classes*/
+.flex{
+	display: flex;
+}
+.alignC{
+	display: flex;
+	align-items: center;
+}
+.justifyC{
+	display: flex;
+	justify-content: center;
+}
+.directionColumn{
+	display: flex;
+	flex-direction: column;
+}
+.center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

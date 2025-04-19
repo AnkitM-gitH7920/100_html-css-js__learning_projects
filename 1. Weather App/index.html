@@ -3,10 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/icon.ico">
+	<link rel="icon" type="image/png" href="images/icon.webp">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="imageStyles.css">
-	<link rel="stylesheet" type="text/css" href="utilities.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<title>Weather App</title>
 </head>
@@ -19,13 +17,18 @@
 		<main>
 			<div class="location-date alignC">
 				<div class="l-d-left alignC">
-					<img src="images/location.png">
-					<p id="cityName">Location</p>
+					<div class="l-d-left-logo">
+						<img src="images/location.webp">
+					</div>
+					<div class="l-d-left-locationInfo">
+						<p id="cityName">Location,</p>
+						<p id="country">Country</p>
+					</div>
 				</div>
 				<p id="l-d-date">Date</p>
 			</div>
 			<div class="icon-desc alignC">
-				<img id="weatherConditionIcon" src="images/weatherIcons/sun.png" alt="Try searching a location">
+				<img loading="lazy" id="weatherConditionIcon" src="images/weatherIcons/sun.png" alt="Try searching a location">
 				<div class="temp-desc directionColumn">
 					<p id="temperature">Temp</p>
 					<p id="description" class="alignCl">Description</p>
@@ -33,14 +36,14 @@
 			</div>
 			<div class="humidity-windspeed alignC">
 				<div class="H-info alignC">
-					<img src="images/humidity.png">
+					<img src="images/humidity.webp">
 					<div class="H-text directionColumn">
 					    <p class="H-title">Humidity</p>
 						<p id="humidity">00%</p>
 					</div>
 				</div>
 				<div class="W-info alignC">
-					<img src="images/windspeed.png">
+					<img src="images/windspeed.webp">
 					<div class="W-text directionColumn">
 					    <p class="W-title">Wind speed</p>
 						<p id="windspeed">00.00 m/s</p>
@@ -49,6 +52,7 @@
 			</div>
 		</main>
 		<footer class="forecastDiv alignC">
+			<!-- code inserted by javascript -->
 			<!-- <div class="forecast-container alignC directionColumn">
 				<p id="fore-date">Aug, 09</p>
 				<img src="images/weatherIcons/storm.png">
@@ -74,6 +78,7 @@
 				<img src="images/weatherIcons/storm.png">
 				<p id="fore-temperature">30&deg;C</p>
 			</div> -->
+			<!-- code inserted by javascript -->
 		</footer>
 	</section>
 <script type="text/javascript" src="app.js"></script>
